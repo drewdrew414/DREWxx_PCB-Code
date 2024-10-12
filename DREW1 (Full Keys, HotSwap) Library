@@ -47,8 +47,6 @@ void MX_GPIO_Init(void) {
 //Making Pins Input
     GPIO_InitStruct.Pull = GPIO_PULLUP;
 //Active PullUp Resistor
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-//Reset Pins
 
 
 //Output Pins Code
@@ -60,9 +58,9 @@ void MX_GPIO_Init(void) {
 //No Pullup or Pulldown Resistor
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 //Communication Speed
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-//Reset Pins
+    
+HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+//Reset GPIO Pin
+
 }
-
-
 
