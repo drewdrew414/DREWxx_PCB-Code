@@ -22,8 +22,8 @@ Library :
 
 #include "stm32f4xx.h" //stm32f407vgt6 MCU
 
-#define COLS //열의 수
-#define ROWS //행의 수
+#define COLS //Amount of COLS
+#define ROWS //Amount of ROWS
 
 const uint16_t rowPins[ROWS] = {GPIO_PIN_
 const uint16_t colPins[COLS] = {GPIO_PIN_
@@ -31,8 +31,31 @@ const uint16_t colPins[COLS] = {GPIO_PIN_
 const char keyMap[ROWS][COLS] = {
 {'ESC_key','F1','F2','F3','F4'
 
-
-
-
 }
+void MX_GPIO_Init(void) {
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+//Reset GPIO Pins
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+//Active GPIOA
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+//Active GPIOB
+
+//Input Pins code
+    GPIO_InitStruct.Pin = GPIO_PIN_;
+//Specify Pins
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+//Making Pins Input
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+//Active PullUp Resistor
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    // 출력 핀 (예: GPIOA의 핀 0)
+    GPIO_InitStruct.Pin = GPIO_PIN_0; // 사용할 핀 지정
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; // 푸시 풀 출력 모드
+    GPIO_InitStruct.Pull = GPIO_NOPULL; // 저항 없음
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // 낮은 속도
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
+
 
