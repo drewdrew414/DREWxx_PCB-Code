@@ -48,13 +48,20 @@ void MX_GPIO_Init(void) {
     GPIO_InitStruct.Pull = GPIO_PULLUP;
 //Active PullUp Resistor
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+//Reset Pins
 
-    // 출력 핀 (예: GPIOA의 핀 0)
-    GPIO_InitStruct.Pin = GPIO_PIN_0; // 사용할 핀 지정
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; // 푸시 풀 출력 모드
-    GPIO_InitStruct.Pull = GPIO_NOPULL; // 저항 없음
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // 낮은 속도
+
+//Output Pins Code
+    GPIO_InitStruct.Pin = GPIO_PIN_;
+//Specify Pins
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+//Making Pins Push Pull Output
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+//No Pullup or Pulldown Resistor
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+//Communication Speed
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+//Reset Pins
 }
 
 
