@@ -62,6 +62,7 @@ KB Specification (Size)
 
 
 『Diode : 1N4148』
+
 『Resistor : 220Ohms』
 
 『2 PINS LED (Size : 2x3x4(mm))』
