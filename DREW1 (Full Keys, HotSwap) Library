@@ -24,3 +24,6 @@ Library :
 
 #define COLS 6 //Amount of COLS
 #define ROWS //Amount of ROWS
+
+const char keyMap [ROWS][6]={
+{'ESC_key','F1','F2','F3','F4•••}
