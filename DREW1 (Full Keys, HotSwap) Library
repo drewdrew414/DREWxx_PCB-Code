@@ -110,9 +110,9 @@ __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
                 __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
-GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
-GPIO_InitStruct_○.Mode = 
-GPIO_InitStruct_○.Pull = 
-GPIO_InitStruct_○.Speed = 
-HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
+        GPIO_InitStruct_○.Mode = 
+            GPIO_InitStruct_○.Pull = 
+                GPIO_InitStruct_○.Speed = 
+                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
 }
