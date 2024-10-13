@@ -22,8 +22,8 @@ Library :
 
 #include "stm32f4xx.h" //STM32F407VGT6 MCU
 
-#define COLS 6 //Amount of COLS
-#define ROWS ○//Amount of ROWS
+#define COLS 6 //Amount of COLS (Use PB, PD Port)
+#define ROWS ○//Amount of ROWS (Use PC, PE Port)
 
 #define COL1_PIN GPIO_PIN_○
 #define COL1_PORT GPIO○
@@ -109,17 +109,23 @@ __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
             __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
                 __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
-GPIO_InitTypeDef GPIO InitStruct_○ = {0};
-    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
+
+
+
+GPIO_InitTypeDef GPIO InitStruct_B = {0};
+    GPIO_InStruct_B.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
 //Setting Pins
-        GPIO_InitStruct_○.Mode = 
+        GPIO_InitStruct_B.Mode = GPIO_MODE_INPUT;
 //Setting Modes
-            GPIO_InitStruct_○.Pull = 
+            GPIO_InitStruct_B.Pull = GPIO_PULLUP;
 //Setting Resistor Pull Up or Down
-                GPIO_InitStruct_○.Speed = 
+                GPIO_InitStruct_B.Speed = GPIO_SPEED_FREQ_LOW;
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
-//Reset GPIO○ PORT
+                    HAL_GPIO_Init(GPIOB,  &GPIO_InitStruct_B);
+//Reset GPIOB PORT
+
+
+
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
     GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
@@ -133,17 +139,9 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
                     HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
-GPIO_InitTypeDef GPIO InitStruct_○ = {0};
-    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
-//Setting Pins
-        GPIO_InitStruct_○.Mode = 
-//Setting Modes
-            GPIO_InitStruct_○.Pull = 
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_○.Speed = 
-//Setting Speed
-                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
-//Reset GPIO○ PORT
+
+
+
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
     GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
@@ -157,6 +155,9 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
                     HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
+
+
+
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
     GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
 //Setting Pins
@@ -168,4 +169,22 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Speed
                     HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
+
+
+
+
+GPIO_InitTypeDef GPIO InitStruct_○ = {0};
+    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
+//Setting Pins
+        GPIO_InitStruct_○.Mode = 
+//Setting Modes
+            GPIO_InitStruct_○.Pull = 
+//Setting Resistor Pull Up or Down
+                GPIO_InitStruct_○.Speed = 
+//Setting Speed
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
+//Reset GPIO○ PORT
+
+
+
 }
