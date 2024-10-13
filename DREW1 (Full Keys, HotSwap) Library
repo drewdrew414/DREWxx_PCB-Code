@@ -22,26 +22,32 @@ Library :
 
 #include "stm32f4xx.h" //STM32F407VGT6 MCU
 
-#define COLS 6 //Amount of COLS (Use PB, PD Port)
+#define COLS 6 //Amount of COLS (Use PD Port)
 #define ROWS ○//Amount of ROWS (Use PC, PE Port)
 
-#define COL1_PIN GPIO_PIN_○
-#define COL1_PORT GPIO○
+#define COL1_PIN GPIO_PIN_15
+#define COL1_PORT GPIOD
+//COL1
 
-#define COL2_PIN GPIO_PIN_○
-#define COL2_PORT GPIO○
+#define COL2_PIN GPIO_PIN_14
+#define COL2_PORT GPIOD
+//COL2
 
-#define COL3_PIN GPIO_PIN_○
-#define COL3_PORT GPIO○
+#define COL3_PIN GPIO_PIN_13
+#define COL3_PORT GPIOD
+//COL3
 
-#define COL4_PIN GPIO_PIN_○
-#define COL4_PORT GPIO○
+#define COL4_PIN GPIO_PIN_12
+#define COL4_PORT GPIOD
+//COL4
 
-#define COL5_PIN GPIO_PIN_○
-#define COL5_PORT GPIO○
+#define COL5_PIN GPIO_PIN_11
+#define COL5_PORT GPIOD
+//COL5
 
-#define COL6_PIN GPIO_PIN_○
-#define COL6_PORT GPIO○
+#define COL6_PIN GPIO_PIN_10
+#define COL6_PORT GPIOD
+//COL6
 
 #define ROW1_PIN GPIO_PIN_○
 #define ROW1_PORT GPIO○
@@ -104,31 +110,16 @@ const char keyMap [ROWS][6]={
 
 void GPIO_Init(void) {
 __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
-    __HAL_RCC_GPIOB_CLK_ENABLE(); //Turn On GPIOB Pins
-        __HAL_RCC_GPIOC_CLK_ENABLE(); //Turn On GPIOC Pins
-            __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
-                __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
+    __HAL_RCC_GPIOC_CLK_ENABLE(); //Turn On GPIOC Pins
+        __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
+            __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
-
-//About PortB
-
-GPIO_InitTypeDef GPIO InitStruct_B = {0};
-    GPIO_InStruct_B.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
-//Setting Pins
-        GPIO_InitStruct_B.Mode = GPIO_MODE_INPUT;
-//Setting Modes
-            GPIO_InitStruct_B.Pull = GPIO_PULLUP;
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_B.Speed = GPIO_SPEED_FREQ_LOW;
-//Setting Speed
-                    HAL_GPIO_Init(GPIOB,  &GPIO_InitStruct_B);
-//Reset GPIOB PORT
 
 
 //About PortD
 
 GPIO_InitTypeDef GPIO InitStruct_D = {0};
-    GPIO_InStruct_D.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
+    GPIO_InStruct_D.Pin = GPIO_PIN_15 | GPIO_PIN_14 | GPIO_PIN_13 | GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_10;
 //Setting Pins
         GPIO_InitStruct_D.Mode = GPIO_MODE_INPUT;
 //Setting Modes
