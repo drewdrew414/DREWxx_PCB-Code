@@ -1,4 +1,4 @@
-/*
+w/*
  * Copyright 2024 드루드루
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,5 +36,7 @@ const char keyMap [ROWS][6]={
 void GPIO_Init(void) {
 __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
     __HAL_RCC_GPIOB_CLK_ENABLE(); //Turn On GPIOB Pins
-
+        __HAL_RCC_GPIOC_CLK_ENABLE(); //Turn On GPIOC Pins
+            __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
+                __HAL_RCC_GPIOE_CLK_ENABLE*); //Trun On GPIO E Pins
 }
