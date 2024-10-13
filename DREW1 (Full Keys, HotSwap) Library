@@ -31,3 +31,9 @@ const char keyMap [ROWS][6]={
 {'TAB_key','q','w','e','r','t','y','u','i','o','p','
 {'CAPS_LOCK_key','a','s','d','f','g','h','j','k','l','
 {
+
+
+void GPIO_Init(void) {
+__HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+}
