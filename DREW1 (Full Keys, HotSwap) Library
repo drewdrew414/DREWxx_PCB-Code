@@ -43,6 +43,56 @@ Library :
 #define COL6_PIN GPIO_PIN_○
 #define COL6_PORT GPIO○
 
+#define ROW1_PIN GPIO_PIN_○
+#define ROW1_PORT GPIO○
+
+#define ROW2_PIN GPIO_PIN_○
+#define ROW2_PORT GPIO○
+
+#define ROW3_PIN GPIO_PIN_○
+#define ROW3_PORT GPIO○
+
+#define ROW4_PIN GPIO_PIN_○
+#define ROW4_PORT GPIO○
+
+#define ROW5_PIN GPIO_PIN_○
+#define ROW5_PORT GPIO○
+
+#define ROW6_PIN GPIO_PIN_○
+#define ROW6_PORT GPIO○
+
+#define ROW7_PIN GPIO_PIN_○
+#define ROW7_PORT GPIO○
+
+#define ROW8_PIN GPIO_PIN_○
+#define ROW8_PORT GPIO○
+
+#define ROW9_PIN GPIO_PIN_○
+#define ROW9_PORT GPIO○
+
+#define ROW10_PIN GPIO_PIN_○
+#define ROW10_PORT GPIO○
+
+#define ROW11_PIN GPIO_PIN_○
+#define ROW11_PORT GPIO○
+
+#define ROW12_PIN GPIO_PIN_○
+#define ROW12_PORT GPIO○
+
+#define ROW13_PIN GPIO_PIN_○
+#define ROW13_PORT GPIO○
+
+#define ROW14_PIN GPIO_PIN_○
+#define ROW14_PORT GPIO○
+
+#define ROW15_PIN GPIO_PIN_○
+#define ROW15_PORT GPIO○
+
+#define ROW16_PIN GPIO_PIN_○
+#define ROW16_PORT GPIO○
+
+#define ROW17_PIN GPIO_PIN_○
+#define ROW17_PORT GPIO○
 
 const char keyMap [ROWS][6]={
 {'ESC_key','F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12'}
@@ -60,4 +110,6 @@ __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
                 __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
 GPIO_InitTypeDef GPIO InitStruct = {0};
+
+
 }
