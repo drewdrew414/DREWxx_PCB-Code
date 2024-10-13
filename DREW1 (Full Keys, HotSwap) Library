@@ -110,7 +110,7 @@ __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
                 __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
 
-
+//About PortB
 
 GPIO_InitTypeDef GPIO InitStruct_B = {0};
     GPIO_InStruct_B.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
@@ -125,37 +125,22 @@ GPIO_InitTypeDef GPIO InitStruct_B = {0};
 //Reset GPIOB PORT
 
 
-
+//About PortD
 
 GPIO_InitTypeDef GPIO InitStruct_D = {0};
     GPIO_InStruct_D.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
 //Setting Pins
-        GPIO_InitStruct_D.Mode = GPIO_MODE_
+        GPIO_InitStruct_D.Mode = GPIO_MODE_INPUT;
 //Setting Modes
-            GPIO_InitStruct_D.Pull = 
+            GPIO_InitStruct_D.Pull = GPIO_PULLUP;
 //Setting Resistor Pull Up or Down
-                GPIO_InitStruct_D.Speed = 
+                GPIO_InitStruct_D.Speed = GPIO_SPEED_FREQ_LOW;
 //Setting Speed
-                    HAL_GPIO_Init(GPIOdD,  &GPIO_InitStruct_D);
+                    HAL_GPIO_Init(GPIOD,  &GPIO_InitStruct_D);
 //Reset GPIOD PORT
 
 
-
-
-
-GPIO_InitTypeDef GPIO InitStruct_○ = {0};
-    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
-//Setting Pins
-        GPIO_InitStruct_○.Mode = 
-//Setting Modes
-            GPIO_InitStruct_○.Pull = 
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_○.Speed = 
-//Setting Speed
-                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
-//Reset GPIO○ PORT
-
-
+//About PortC
 
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
@@ -171,7 +156,22 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Reset GPIO○ PORT
 
 
+//About Port E
 
+GPIO_InitTypeDef GPIO InitStruct_○ = {0};
+    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
+//Setting Pins
+        GPIO_InitStruct_○.Mode = 
+//Setting Modes
+            GPIO_InitStruct_○.Pull = 
+//Setting Resistor Pull Up or Down
+                GPIO_InitStruct_○.Speed = 
+//Setting Speed
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
+//Reset GPIO○ PORT
+
+
+//About PortA
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
     GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
