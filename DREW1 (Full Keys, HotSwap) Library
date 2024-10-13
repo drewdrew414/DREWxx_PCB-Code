@@ -23,7 +23,26 @@ Library :
 #include "stm32f4xx.h" //STM32F407VGT6 MCU
 
 #define COLS 6 //Amount of COLS
-#define ROWS //Amount of ROWS
+#define ROWS ○//Amount of ROWS
+
+#define COL1_PIN GPIO_PIN_○
+#define COL1_PORT GPIO○
+
+#define COL2_PIN GPIO_PIN_○
+#define COL2_PORT GPIO○
+
+#define COL3_PIN GPIO_PIN_○
+#define COL3_PORT GPIO○
+
+#define COL4_PIN GPIO_PIN_○
+#define COL4_PORT GPIO○
+
+#define COL5_PIN GPIO_PIN_○
+#define COL5_PORT GPIO○
+
+#define COL6_PIN GPIO_PIN_○
+#define COL6_PORT GPIO○
+
 
 const char keyMap [ROWS][6]={
 {'ESC_key','F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12'}
@@ -38,7 +57,7 @@ __HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
     __HAL_RCC_GPIOB_CLK_ENABLE(); //Turn On GPIOB Pins
         __HAL_RCC_GPIOC_CLK_ENABLE(); //Turn On GPIOC Pins
             __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
-                __HAL_RCC_GPIOE_CLK_ENABLE*); //Trun On GPIOE Pins
+                __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
 
 GPIO_InitTypeDef GPIO InitStruct = {0};
 }
