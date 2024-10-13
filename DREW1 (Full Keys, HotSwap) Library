@@ -118,7 +118,7 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Resistor Pull Up or Down
                 GPIO_InitStruct_○.Speed = 
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
@@ -130,7 +130,7 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Resistor Pull Up or Down
                 GPIO_InitStruct_○.Speed = 
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
@@ -142,7 +142,7 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Resistor Pull Up or Down
                 GPIO_InitStruct_○.Speed = 
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
@@ -154,7 +154,7 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Resistor Pull Up or Down
                 GPIO_InitStruct_○.Speed = 
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 
 GPIO_InitTypeDef GPIO InitStruct_○ = {0};
@@ -166,6 +166,6 @@ GPIO_InitTypeDef GPIO InitStruct_○ = {0};
 //Setting Resistor Pull Up or Down
                 GPIO_InitStruct_○.Speed = 
 //Setting Speed
-                    HAL_GPIO_Init(GPIO○ &GPIO_InitStruct_○);
+                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
 //Reset GPIO○ PORT
 }
