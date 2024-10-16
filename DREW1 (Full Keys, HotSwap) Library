@@ -23,7 +23,7 @@ Library :
 #include "stm32f4xx.h" //STM32F407VGT6 MCU
 
 #define COLS 6 //Amount of COLS (Use PD Port)
-#define ROWS ○//Amount of ROWS (Use PC, PE Port)
+#define ROWS 16//Amount of ROWS (Use PC, PE Port)
 
 #define COL1_PIN GPIO_PIN_8
 #define COL1_PORT GPIOD
@@ -49,133 +49,82 @@ Library :
 #define COL6_PORT GPIOD
 //COL6
 
-#define ROW1_PIN GPIO_PIN_○
+#define ROW1_PIN GPIO_PIN_0
 #define ROW1_PORT GPIO○
 
-#define ROW2_PIN GPIO_PIN_○
+#define ROW2_PIN GPIO_PIN_1
 #define ROW2_PORT GPIO○
 
-#define ROW3_PIN GPIO_PIN_○
+#define ROW3_PIN GPIO_PIN_2
 #define ROW3_PORT GPIO○
 
-#define ROW4_PIN GPIO_PIN_○
+#define ROW4_PIN GPIO_PIN_3
 #define ROW4_PORT GPIO○
 
-#define ROW5_PIN GPIO_PIN_○
+#define ROW5_PIN GPIO_PIN_4
 #define ROW5_PORT GPIO○
 
-#define ROW6_PIN GPIO_PIN_○
+#define ROW6_PIN GPIO_PIN_5
 #define ROW6_PORT GPIO○
 
-#define ROW7_PIN GPIO_PIN_○
+#define ROW7_PIN GPIO_PIN_6
 #define ROW7_PORT GPIO○
 
-#define ROW8_PIN GPIO_PIN_○
+#define ROW8_PIN GPIO_PIN_7
 #define ROW8_PORT GPIO○
 
-#define ROW9_PIN GPIO_PIN_○
+#define ROW9_PIN GPIO_PIN_8
 #define ROW9_PORT GPIO○
 
-#define ROW10_PIN GPIO_PIN_○
+#define ROW10_PIN GPIO_PIN_9
 #define ROW10_PORT GPIO○
 
-#define ROW11_PIN GPIO_PIN_○
+#define ROW11_PIN GPIO_PIN_10
 #define ROW11_PORT GPIO○
 
-#define ROW12_PIN GPIO_PIN_○
+#define ROW12_PIN GPIO_PIN_11
 #define ROW12_PORT GPIO○
 
-#define ROW13_PIN GPIO_PIN_○
+#define ROW13_PIN GPIO_PIN_12
 #define ROW13_PORT GPIO○
 
-#define ROW14_PIN GPIO_PIN_○
+#define ROW14_PIN GPIO_PIN_13
 #define ROW14_PORT GPIO○
 
-#define ROW15_PIN GPIO_PIN_○
+#define ROW15_PIN GPIO_PIN_14
 #define ROW15_PORT GPIO○
 
-#define ROW16_PIN GPIO_PIN_○
+#define ROW16_PIN GPIO_PIN_15
 #define ROW16_PORT GPIO○
 
-#define ROW17_PIN GPIO_PIN_○
+#define ROW17_PIN GPIO_PIN_16
 #define ROW17_PORT GPIO○
 
-const char keyMap [ROWS][6]={
-{'ESC_key','F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12'}
-{'○','1','2','3','4','5','6','7','8','9','0','
-{'TAB_key','q','w','e','r','t','y','u','i','o','p','
-{'CAPS_LOCK_key','a','s','d','f','g','h','j','k','l','
-{
+const char keyMap [16][6]={
+{"ESC_key","
 
+};
 
 void GPIO_Init(void) {
-__HAL_RCC_GPIOA_CLK_ENABLE(); //Turn On GPIOA Pins
-    __HAL_RCC_GPIOC_CLK_ENABLE(); //Turn On GPIOC Pins
-        __HAL_RCC_GPIOD_CLK_ENABLE(); //Trun On GPIOD Pins
-            __HAL_RCC_GPIOE_CLK_ENABLE(); //Trun On GPIOE Pins
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
 
+    //Open Clocks
+    __HAL_RCC_GPIOD_CLK_ENABLE(); //Active Port D
+    __HAL_RCC_GPIOE_CLK_ENABLE(); //Active Port E
 
+    GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 |
+                          GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 |
+                          GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 |
+                          GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP; //PushPull
+    GPIO_InitStruct.Pull = GPIO_NOPULL;         //NoPullup/down
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; //set Speed
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);      // Reset Port E
 
-//About PortD
-
-GPIO_InitTypeDef GPIO InitStruct_D = {0};
-    GPIO_InStruct_D.Pin = GPIO_PIN_15 | GPIO_PIN_14 | GPIO_PIN_13 | GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_10;
-//Setting Pins
-        GPIO_InitStruct_D.Mode = GPIO_MODE_INPUT;
-//Setting Modes
-            GPIO_InitStruct_D.Pull = GPIO_PULLUP;
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_D.Speed = GPIO_SPEED_FREQ_LOW;
-//Setting Speed
-                    HAL_GPIO_Init(GPIOD,  &GPIO_InitStruct_D);
-//Reset GPIOD PORT
-
-
-//About PortC
-
-
-GPIO_InitTypeDef GPIO InitStruct_C = {0};
-    GPIO_InStruct_C.Pin = GPIO_PIN_○ | GPIO_PIN_○ | ••• ;
-//Setting Pins
-        GPIO_InitStruct_C.Mode = GPIO_MODE_OUTPUT_PP;
-//Setting Modes
-            GPIO_InitStruct_C.Pull = GPIO_NOPULL;
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_C.Speed = GPIO_SPEED_FREQ_LOW;
-//Setting Speed
-                    HAL_GPIO_Init(GPIOC,  &GPIO_InitStruct_C);
-//Reset GPIOC PORT
-
-
-//About Port E
-
-GPIO_InitTypeDef GPIO InitStruct_E = {0};
-    GPIO_InStruct_E.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••;
-//Setting Pins
-        GPIO_InitStruct_D.Mode = GPIO_MODE_OUTPUT_PP;
-//Setting Modes
-            GPIO_InitStruct_D.Pull = GPIO_NOPULL;
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_D.Speed = GPIO_SPEED_FREQ_LOW;
-//Setting Speed
-                    HAL_GPIO_Init(GPIOD,  &GPIO_InitStruct_D);
-//Reset GPIOD PORT
-
-
-//About PortA
-
-GPIO_InitTypeDef GPIO InitStruct_○ = {0};
-    GPIO_InStruct_○.Pin = GPIO_PIN_○ | GPIO_PIN_○ | •••
-//Setting Pins
-        GPIO_InitStruct_○.Mode = 
-//Setting Modes
-            GPIO_InitStruct_○.Pull = 
-//Setting Resistor Pull Up or Down
-                GPIO_InitStruct_○.Speed = 
-//Setting Speed
-                    HAL_GPIO_Init(GPIO○,  &GPIO_InitStruct_○);
-//Reset GPIO○ PORT
-
-
+    GPIO_InitStruct.Pin = GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT; //input Mode
+    GPIO_InitStruct.Pull = GPIO_PULLUP;      //Trun On Pullup Resistor
+    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);  //Reset Port D
+}
 
 }
